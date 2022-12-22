@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/static/app.css" />
+		<title>Edit page</title>
+	</head>
+	<body>
+		<h1>Edit a User</h1>
+		<form id="edit_user" method="POST">
+			<p>
+				<label
+					>First Name
+					<input type="text" name="first_name" value="{{ user.first_name }}" />
+				</label>
+			</p>
+			<p>
+				<label
+					>Last Name
+					<input type="text" name="last_name" value="{{ user.last_name }}" />
+				</label>
+			</p>
+			<p>
+				<label
+					>Image URL
+					<input type="text" name="image_url" value="{{ user.image_url }}" />
+				</label>
+			</p>
+
+			<button id="cancel_edit" href="/users">Cancel</button>
+			<button id="save_edit" type="submit">Save</button>
+		</form>
+	</body>
+</html>

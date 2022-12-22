@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/static/app.css" />
+	</head>
+	<body>
+		<div class="row">
+			{% if user.image_url %}
+			<div>
+				<img src="{{ user.image_url }}" width="100px" alt="" />
+			</div>
+			{% endif %}
+
+			<div>
+				<h1>{{ user.first_name}} {{user.last_name}}</h1>
+
+				<form>
+					<button formaction="/users/{{ user.id }}/edit" formmethod="GET">
+						Edit
+					</button>
+					<button
+						id="delete_user"
+						formaction="/users/{{ user.id }}/delete"
+						formmethod="POST"
+					>
+						Delete
+					</button>
+				</form>
+				<h2>Posts</h2>
+
+				<ul>
+					{% for post in user.posts %}
+					<li>
+						<a href="/posts/{{post.id}}">{{ post.title }}</a>
+					</li>
+					{% endfor %}
+				</ul>
+				<p><a href="/users/{{user.id}}/posts_new">Add Post</a></p>
+			</div>
+		</div>
+	</body>
+</html>

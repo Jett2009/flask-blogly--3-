@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Add Tag form</title>
+	</head>
+	<body>
+		<h1>Create a tag</h1>
+		<form class="add_tag" method="POST">
+			<p>
+				<label
+					>Name
+					<input type="text" name="name" />
+				</label>
+			</p>
+			<button formaction="/tags" formmethod="GET">Cancel</button>
+			<button type="submit">Add</button>
+		</form>
+	</body>
+</html>
